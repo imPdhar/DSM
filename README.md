@@ -4,13 +4,22 @@ The DSM system detects whether a driver of an automobile is feeling sleepy using
 
 The training notebook is [*Train_NB.ipynb*](https://github.com/imPdhar/DSM/blob/master/Train_NB.ipynb)
 
-Model directory is [lite/examples/image_classification/raspberry_pi/](https://github.com/imPdhar/DSM/tree/master/lite/examples/image_classification/raspberry_pi)
+Model directory is [image_classification](https://github.com/imPdhar/DSM/image_classification/)
 
 ## The problem statement
 
 Given was a pre-cleaned and pre-normalized dataset from Kaggle which had just two classes - Open eyes and Closed eyes.
 
 The way how this helps us in creating a drowsiness detector is by the fact that drowsiness may be defined by an action that involves closing eyes due to the fatigue of the driver.
+
+## Usage for inference
+
+1) Make sure your computer is connected to a webcam.
+2) Go to the directory of the model - 'tree/master/lite/examples/image_classification/raspberry_pi' (`cd ../tree/master/lite/examples/image_classification/raspberry_pi`)
+3) Run requirements.txt to install required libraries using `pip install -r requirements.txt` 
+4) After installation, run `python classify.py --model eyemodel1_metadata.tflite ` to get real-time video inference
+
+## 
 
 ## Proof of concept
 
@@ -54,12 +63,4 @@ The initialized keras sequential model consisted of:
 
 **Loss function - SparseCategoricalEntropy**: Entropy across the network is acquired across different classes. Mostly used in Multiclass classification but gives good accuracy in Binary Classification problems too.
 
-## Usage for inference
-
-1) Make sure your computer is connected to a webcam.
-2) Go to the directory of the model - 'tree/master/lite/examples/image_classification/raspberry_pi' (`cd ../tree/master/lite/examples/image_classification/raspberry_pi`)
-3) Run requirements.txt to install required libraries using `pip install -r requirements.txt` 
-4) After installation, run `python classify.py --model eyemodel1_metadata.tflite ` to get real-time video inference
-
-## 
 
